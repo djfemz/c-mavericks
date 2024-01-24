@@ -71,13 +71,16 @@ public class DataEncryptorTest{
 
 	}
 
-
 	@Test
-	public void testValidateData(){
+	public void testForDecryptData(){
 		
 		DataEncryptor dataEncryptor = new DataEncryptor();
-		
-		
+
+		String decryptionOfFirstInput = dataEncryptor.encrypt("3591");
+		String decryptionOfSecondInput = dataEncryptor.encrypt("2490");
+
+		assertEquals("2468", decryptionOfFirstInput);
+		assertEquals("2357", decryptionOfSecondInput);	
 	}
 
 
