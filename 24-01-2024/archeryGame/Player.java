@@ -1,10 +1,9 @@
 public class Player{
 
-
-	public int play(){
-		ArcheryGame archeryGame = new ArcheryGame();
+	public void play(ArcheryGame archeryGame, int player, int chance){
 		int score = archeryGame.generateScore();
-		return score;
+		archeryGame.setScoreBoard(player, chance, score);		
+
 	}
 
 
