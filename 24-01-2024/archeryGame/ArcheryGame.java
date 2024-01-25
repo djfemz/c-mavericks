@@ -41,6 +41,10 @@ public class ArcheryGame{
 
 	}
 
+	public void setScoreBoard(int player, int chance, int score){
+		scoreBoard[player - 1][chance - 1] = score;
+	}
+
 	public int generateScore(){
 		SecureRandom secureRandom = new SecureRandom();
 		int score = secureRandom.nextInt(11);
