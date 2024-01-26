@@ -39,8 +39,28 @@ public class DataEncryptor{
 		}
 
 		return true;
-
 	}
 
+	public String decrypt(String data){
+		if(!isValidData(data)) {
+			IllegalArgumentException exception = new IllegalArgumentException("data must be four digits long");
+			throw exception;
+		}
+		
+		int firstDigit = data.charAt(0) - '0'; 
+		int secondDigit = data.charAt(1)- '0';
+		int thirdDigit = data.charAt(2) - '0';
+		int fourthDigit = data.charAt(3) - '0';
 
+
+		int digit1 = (firstDigit + 3) % 10;
+		int digit2 = (secondDigit + 3) % 10;
+		int digit3 = (thirdDigit + 3) % 10;
+		int digit4 = (fourthDigit + 3) % 10;
+		
+
+		String result  = ""+ digit3 + digit4 + digit1 + digit2;
+
+		return result;
+	}
 }
